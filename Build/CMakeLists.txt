@@ -1,9 +1,11 @@
 cmake_minimum_required(VERSION 3.27.0)
 set(CMAKE_CXX_STANDARD 20)
 project(iris)
-add_executable(iris ../JSON/LSP/Diagnostic.cpp ../JSON/LSP/LocationLink.cpp ../JSON/LSP/Location.cpp ../JSON/LSP/TextDocumentEdit.cpp ../JSON/LSP/AnnotatedTextEdit.cpp ../JSON/LSP/ChangeAnnotation.cpp ../JSON/LSP/TextEdit.cpp ../JSON/LSP/DocumentFilter.cpp ../JSON/LSP/TextDocumentPositionParams.cpp ../JSON/LSP/OptionalVersionedTextDocumentIdentifier.cpp ../JSON/LSP/VersionedTextDocumentIdentifier.cpp ../JSON/LSP/TextDocumentIdentifier.cpp ../JSON/LSP/TextDocumentItem.cpp ../JSON/LSP/Range.cpp ../JSON/LSP/Position.cpp ../JSON/LSP/RegularExpressionsClientCapabilities.cpp ../JSON/LSP/ProgressParams.cpp ../JSON/LSP/CancelParams.cpp ../JSON/LSP/Response.cpp ../JSON/LSP/Notification.cpp ../JSON/LSP/Request.cpp ../JSON/LSP/Message.cpp ../JSON/LSP/Header.cpp ../JSON/LSP/Server.cpp ../Iris.cpp)
+file(GLOB_RECURSE lsp ../JSON/*.cpp)
+add_executable(iris ../Iris.cpp ${lsp})
 if(MSVC)
     target_compile_definitions(iris PRIVATE iris_windows=)
 endif()
-target_compile_options(iris PRIVATE -flto -O3 -fno-rtti -fno-exceptions -fomit-frame-pointer)
+target_compile_options(iris PRIVATE -flto -O3 -fno-rtti -fno-exceptions
+-fomit-frame-pointer)
 target_link_options(iris PRIVATE -flto)
