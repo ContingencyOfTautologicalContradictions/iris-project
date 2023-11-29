@@ -7,8 +7,6 @@ namespace Iris::LSP
     {
     public:
         Position start, end;
-
-        bool isEmpty, isSingleLine;
     };
 
     void from_json(const nlohmann::json&, Range&);
