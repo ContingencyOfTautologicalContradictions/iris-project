@@ -8,9 +8,8 @@ namespace Iris::LSP
     public:
         std::string title, command;
 
-        using Variants = std::variant<bool, std::int64_t, std::string>;
-
-        using Arguments = std::optional<Variants>;
+        using Arguments = std::optional<std::variant<bool, std::int64_t, std::
+        string>>;
 
         Json::Field<std::vector<Arguments>> arguments;
     };
