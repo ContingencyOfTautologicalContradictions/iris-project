@@ -5,8 +5,9 @@ The Iris Project aims to become the main replacement for C++ and Rust as a syste
 On-going project, but you can already test the LSP client & server with the following commands
 
 ```
+cd Build
 cmake . && make
-cd Client
+cd ../Client
 npm i
 npm build
 cd ..
