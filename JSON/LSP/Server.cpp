@@ -12,7 +12,7 @@ namespace Iris::LSP
         while(process)
         {
             std::string request, line;
-            while(std::getline(std::cin, line)) //ohno{"jsonrpc":"2.0", "method":"$/cancelRequest", "params":{"id":"meow"}}
+            while(std::getline(std::cin, line))
                 request += line;
             Header(request);
             const nlohmann::json data = nlohmann::json::parse(request);
