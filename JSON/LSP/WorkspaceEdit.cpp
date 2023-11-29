@@ -9,7 +9,7 @@ namespace Iris::LSP
         if(data.contains("documentChanges"))
         {
             we.documentChanges.Set();
-            const nlohmann::json documentChanges = data.at("documentChanges");
+            const nlohmann::json& documentChanges = data.at("documentChanges");
             for(const nlohmann::json& documentChange : documentChanges)
             {
                 if(documentChange.contains("kind"))
