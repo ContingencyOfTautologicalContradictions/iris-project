@@ -3,10 +3,12 @@
 
 namespace Iris::LSP
 {
+    using ProgressToken = std::variant<std::int64_t, std::string>;
+
     class [[nodiscard]] Progress final
     {
     public:
-        std::string kind/* begin, report or end */, title;
+        std::string kind, title;
 
         Json::Field<bool> cancellable;
 
@@ -18,7 +20,7 @@ namespace Iris::LSP
     class [[nodiscard]] ProgressParams final
     {
     public:
-        std::variant<std::int64_t, std::string> token;
+        ProgressToken token;
 
         Progress value;
     };
