@@ -32,7 +32,7 @@ namespace Iris::LSP
         if(data.contains("code"))
         {
             d.code.Set();
-            const nlohmann::json code = data.at("code");
+            const nlohmann::json& code = data.at("code");
             if(code.is_number_integer())
                 d.code.Value() = code.get<std::int64_t>();
             else
@@ -55,7 +55,7 @@ namespace Iris::LSP
         if(d.code.Present())
             std::visit([&](auto&& active)
             {
-                data["code"] = active;
+                data["code"] = static_cast<decltype(active)&&>(active);
             }, d.code.Value());
         if(d.codeDescription.Present())
             data["codeDescription"] = d.codeDescription.Value();
