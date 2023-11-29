@@ -6,7 +6,7 @@ namespace Iris::LSP
     OptionalVersionedTextDocumentIdentifier& ovtdi)
     {
         ovtdi.uri = data.at("uri").get<DocumentUri>();
-        const nlohmann::json version = data.at("version");
+        const nlohmann::json& version = data.at("version");
         if(version.is_number_integer())
             ovtdi.version = version.get<std::int64_t>();
     }
