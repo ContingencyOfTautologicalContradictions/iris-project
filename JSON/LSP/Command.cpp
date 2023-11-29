@@ -9,7 +9,7 @@ namespace Iris::LSP
         if(data.contains("arguments"))
         {
             c.arguments.Set();
-            const nlohmann::json arguments = data.at("arguments");
+            const nlohmann::json& arguments = data.at("arguments");
             for(const nlohmann::json& argument : arguments)
             {
                 if(argument.is_null())
@@ -25,23 +25,20 @@ namespace Iris::LSP
         }
     }
 
-    void to_json(nlohmann::json& data, const Command::Arguments& argument)
-    {
-        if(argument.has_value())
-            std::visit([&](auto&& active)
-            {
-                data.push_back(active);
-            }, argument.value());
-        else
-            data.push_back(nullptr);
-    }
-
     [[nodiscard]] auto jsonify(const std::vector<Command::Arguments>& arguments
     ) noexcept -> nlohmann::json
     {
         nlohmann::json data;
         for(const Command::Arguments& argument : arguments)
-            to_json(data, argument);
+        {
+            if(argument.has_value())
+                std::visit([&](auto&& active)
+                {
+                    data.push_back(active);
+                }, argument.value());
+            else
+                data.push_back(nullptr);
+        }
         return data;
     }
 
