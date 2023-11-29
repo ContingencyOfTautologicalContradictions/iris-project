@@ -55,7 +55,7 @@ namespace Iris::LSP
         if(d.code.Present())
             std::visit([&](auto&& active)
             {
-                data["code"] = static_cast<decltype(active)&&>(active);
+                data["code"] = active;
             }, d.code.Value());
         if(d.codeDescription.Present())
             data["codeDescription"] = d.codeDescription.Value();
