@@ -8,4 +8,12 @@ namespace Iris::LSP
         recc.engine = data.at("engine").get<std::string>();
         recc.version = Json::Field<std::string>(data, "version");
     }
+
+    void to_json(nlohmann::json& data, const
+    RegularExpressionsClientCapabilities& recc)
+    {
+        data["engine"] = recc.engine;
+        if(recc.version.Present())
+            data["version"] = recc.version.Value();
+    }
 }

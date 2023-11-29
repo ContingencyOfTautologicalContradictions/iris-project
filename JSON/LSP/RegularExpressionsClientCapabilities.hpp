@@ -13,4 +13,6 @@ namespace Iris::LSP
 
     void from_json(const nlohmann::json&, RegularExpressionsClientCapabilities&
     );
+
+    void to_json(nlohmann::json&, const RegularExpressionsClientCapabilities&);
 }
