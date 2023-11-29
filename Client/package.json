@@ -1,0 +1,59 @@
+{
+    "activationEvents":
+    [
+        "onStartupFinished"
+    ],
+    "name": "iris-project",
+    "displayName": "Iris Language Project",
+    "description": "Iris Language Project",
+    "version": "0.0.1",
+    "categories":
+    [
+        "Programming Languages"
+    ],
+    "main": "./out/client.js",
+    "contributes":
+    {
+        "languages":
+        [
+            {
+                "id": "sclera",
+                "aliases": [],
+                "extensions":
+                [
+                    ".sclera"
+                ],
+                "configuration": "./sclera/sclera.json"
+            }
+        ],
+        "grammars":
+        [
+            {
+                "language": "sclera",
+                "scopeName": "source.sclera",
+                "path": "./sclera/sclera.plist"
+            }
+        ]
+    },
+    "scripts":
+    {
+        "package": "vsce package -o out/iris.vsix",
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -b"
+    },
+    "engines":
+    {
+        "vscode": "^1.84.2"
+    },
+    "devDependencies":
+    {
+        "@types/node": "^20.10.0",
+        "@types/vscode": "^1.84.2",
+        "@vscode/vsce": "^2.22.0"
+    },
+    "dependencies":
+    {
+        "typescript": "^5.3.2",
+        "vscode-languageclient": "^9.0.1"
+    }
+}
