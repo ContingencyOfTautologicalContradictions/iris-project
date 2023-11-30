@@ -9,7 +9,7 @@ cd Build
 cmake . && make
 cd ../Client
 npm i
-npm build
+npm run build
 cd ..
 ```
 
