@@ -1,16 +1,10 @@
 #pragma once
 #include "URI.hpp"
-#include "../JSON/Field.hpp"
+#include "DeleteFileOptions.hpp"
 #include "ChangeAnnotationIdentifier.hpp"
 
 namespace Iris::LSP
 {
-    class [[nodiscard]] DeleteFileOptions final
-    {
-    public:
-        Json::Field<bool> recursive, ignoreIfNotExists;
-    };
-
     class [[nodiscard]] DeleteFile final
     {
     public:
@@ -22,10 +16,6 @@ namespace Iris::LSP
 
         Json::Field<ChangeAnnotationIdentifier> annotationId;
     };
-
-    void from_json(const nlohmann::json&, DeleteFileOptions&);
-
-    void to_json(nlohmann::json&, const DeleteFileOptions&);
 
     void from_json(const nlohmann::json&, DeleteFile&);
 
