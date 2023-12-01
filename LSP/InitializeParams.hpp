@@ -1,18 +1,11 @@
 #pragma once
 #include "TraceValue.hpp"
+#include "ClientInfo.hpp"
 #include "WorkspaceFolder.hpp"
 #include "WorkDoneProgressParams.hpp"
 
 namespace Iris::LSP
 {
-    class [[nodiscard]] ClientInfo final
-    {
-    public:
-        std::string name;
-
-        Json::Field<std::string> version;
-    };
-
     class [[nodiscard]] InitializeParams final
     {
     public:
@@ -38,10 +31,6 @@ namespace Iris::LSP
         Json::Field<std::optional<std::vector<WorkspaceFolder>>>
         workspaceFolders;
     };
-
-    void from_json(const nlohmann::json&, ClientInfo&);
-
-    void to_json(nlohmann::json&, const ClientInfo&);
 
     void from_json(const nlohmann::json&, InitializeParams&);
 
