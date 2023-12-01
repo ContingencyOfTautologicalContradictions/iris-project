@@ -1,4 +1,4 @@
-#include "JSON/LSP/Server.hpp"
+#include "LSP/Server.hpp"
 #include <string>
 
 int main(int argc, char** argv)
