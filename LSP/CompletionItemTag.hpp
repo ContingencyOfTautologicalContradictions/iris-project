@@ -5,6 +5,6 @@ namespace Iris::LSP
 {
     enum class CompletionItemTag : std::uint8_t
     {
-        Deprecated
+        Deprecated = 1
     };
 }
