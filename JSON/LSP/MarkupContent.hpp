@@ -1,10 +1,9 @@
 #pragma once
 #include "../Json.hpp"
+#include "MarkupKind.hpp"
 
 namespace Iris::LSP
 {
-    using MarkupKind = std::string;
-
     class [[nodiscard]] MarkupContent final
     {
     public:
