@@ -1,6 +1,6 @@
 #pragma once
 #include "Location.hpp"
-#include "../Field.hpp"
+#include "../JSON/Field.hpp"
 
 namespace Iris::LSP
 {

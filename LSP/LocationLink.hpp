@@ -1,7 +1,7 @@
 #pragma once
 #include "URI.hpp"
 #include "Range.hpp"
-#include "../Field.hpp"
+#include "../JSON/Field.hpp"
 
 namespace Iris::LSP
 {

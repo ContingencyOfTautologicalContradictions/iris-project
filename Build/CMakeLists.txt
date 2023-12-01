@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.27.0)
 set(CMAKE_CXX_STANDARD 20)
 project(iris)
-file(GLOB_RECURSE lsp ../JSON/*.cpp)
+file(GLOB_RECURSE lsp ../LSP/*.cpp)
 add_executable(iris ../Iris.cpp ${lsp})
 if(MSVC)
     target_compile_definitions(iris PRIVATE iris_windows=)

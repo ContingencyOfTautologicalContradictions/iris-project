@@ -1,6 +1,6 @@
 #pragma once
 #include "URI.hpp"
-#include "../Field.hpp"
+#include "../JSON/Field.hpp"
 #include "ChangeAnnotationIdentifier.hpp"
 
 namespace Iris::LSP

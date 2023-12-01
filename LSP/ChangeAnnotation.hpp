@@ -1,5 +1,5 @@
 #pragma once
-#include "../Field.hpp"
+#include "../JSON/Field.hpp"
 
 namespace Iris::LSP
 {

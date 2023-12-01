@@ -1,6 +1,6 @@
 #pragma once
-#include "../Json.hpp"
 #include "MarkupKind.hpp"
+#include "../JSON/Json.hpp"
 
 namespace Iris::LSP
 {
