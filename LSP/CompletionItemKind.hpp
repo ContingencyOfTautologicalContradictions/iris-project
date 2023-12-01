@@ -3,7 +3,7 @@
 
 namespace Iris::LSP
 {
-    enum class CompletionItemKind : std::uint8_t
+    enum class ECompletionItemKind : std::uint8_t
     {
         Text = 1u,
         Method = 2u,
