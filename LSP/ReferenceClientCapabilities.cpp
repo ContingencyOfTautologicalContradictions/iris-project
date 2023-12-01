@@ -9,8 +9,7 @@ namespace Iris::LSP
         );
     }
 
-    void to_json(nlohmann::json& data, const ReferenceClientCapabilities&
-    rcc)
+    void to_json(nlohmann::json& data, const ReferenceClientCapabilities& rcc)
     {
         if(rcc.dynamicRegistration.Present())
             data["dynamicRegistration"] = rcc.dynamicRegistration.Value();
