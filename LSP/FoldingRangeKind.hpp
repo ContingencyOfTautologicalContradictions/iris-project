@@ -1,7 +1,15 @@
 #pragma once
-#include <string>
+#include "../JSON/Field.hpp"
 
 namespace Iris::LSP
 {
-    using FoldingRangeKind = std::string;
+    class [[nodiscard]] FoldingRangeKind final
+    {
+    public:
+        Json::Field<std::vector<std::string>> valueSet;
+    };
+
+    void from_json(const nlohmann::json&, FoldingRangeKind&);
+
+    void to_json(nlohmann::json&, const FoldingRangeKind&);
 }
