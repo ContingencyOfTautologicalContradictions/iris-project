@@ -1,18 +1,10 @@
 #pragma once
-#include "../JSON/Field.hpp"
+#include "FailureHandlingKind.hpp"
+#include "ResourceOperationKind.hpp"
+#include "ChangeAnnotationSupport.hpp"
 
 namespace Iris::LSP
 {
-    using ResourceOperationKind = std::string;
-
-    using FailureHandlingKind = std::string;
-
-    class [[nodiscard]] ChangeAnnotationSupport final
-    {
-    public:
-        Json::Field<bool> groupsOnLabel;
-    };
-
     class [[nodiscard]] WorkspaceEditClientCapabilities final
     {
     public:
@@ -26,10 +18,6 @@ namespace Iris::LSP
 
         Json::Field<ChangeAnnotationSupport> changeAnnotationSupport;
     };
-
-    void from_json(const nlohmann::json&, ChangeAnnotationSupport&);
-
-    void to_json(nlohmann::json&, const ChangeAnnotationSupport&);
 
     void from_json(const nlohmann::json&, WorkspaceEditClientCapabilities&);
 
