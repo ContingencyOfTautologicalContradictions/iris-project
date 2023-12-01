@@ -25,7 +25,7 @@ namespace Iris::LSP
 
     void from_json(const nlohmann::json& data, ProgressParams& pp)
     {
-        const nlohmann::json& token = data.at("token");
+       const nlohmann::json& token = data.at("token");
         if(token.is_string())
             pp.token = token.get<std::string>();
         else

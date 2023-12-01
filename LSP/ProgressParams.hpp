@@ -1,10 +1,9 @@
 #pragma once
+#include "ProgressToken.hpp"
 #include "../JSON/Field.hpp"
 
 namespace Iris::LSP
 {
-    using ProgressToken = std::variant<std::int64_t, std::string>;
-
     class [[nodiscard]] Progress final
     {
     public:

@@ -1,5 +1,6 @@
 #pragma once
-#include "ProgressParams.hpp"
+#include "ProgressToken.hpp"
+#include "../JSON/Field.hpp"
 
 namespace Iris::LSP
 {
