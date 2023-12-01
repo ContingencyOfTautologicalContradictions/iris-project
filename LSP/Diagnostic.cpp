@@ -19,7 +19,7 @@ namespace Iris::LSP
         "codeDescription");
         d.source = Json::Field<std::string>(data, "source");
         d.message = data.at("message").get<std::string>();
-        d.tags = Json::Field<std::vector<DiagnosticTag>>(data, "tags");
+        d.tags = Json::Field<std::vector<EDiagnosticTag>>(data, "tags");
         d.relatedInformation = Json::Field<std::vector<
         DiagnosticRelatedInformation>>(data, "relatedInformation");
     }

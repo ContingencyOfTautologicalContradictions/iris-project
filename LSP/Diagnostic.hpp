@@ -1,6 +1,6 @@
 #pragma once
 #include "../JSON/Field.hpp"
-#include "DiagnosticTag.hpp"
+#include "EDiagnosticTag.hpp"
 #include "CodeDescription.hpp"
 #include "DiagnosticSeverity.hpp"
 #include "DiagnosticRelatedInformation.hpp"
@@ -22,7 +22,7 @@ namespace Iris::LSP
 
         std::string message;
 
-        Json::Field<std::vector<DiagnosticTag>> tags;
+        Json::Field<std::vector<EDiagnosticTag>> tags;
 
         Json::Field<std::vector<DiagnosticRelatedInformation>>
         relatedInformation;
