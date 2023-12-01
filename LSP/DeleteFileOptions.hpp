@@ -6,7 +6,7 @@ namespace Iris::LSP
     class [[nodiscard]] DeleteFileOptions final
     {
     public:
-        Json::Field<bool> recursive, ignoreIfExists;
+        Json::Field<bool> recursive, ignoreIfNotExists;
     };
 
     void from_json(const nlohmann::json&, DeleteFileOptions&);
