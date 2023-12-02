@@ -5,7 +5,7 @@ namespace Iris::LSP
 {
     class [[nodiscard]] Empty final{};
 
-    void from_json(const nlohmann::json&, Empty&){}
+    void from_json(const nlohmann::json&, Empty&);
 
-    void to_json(nlohmann::json&, const Empty&){}
+    void to_json(nlohmann::json&, const Empty&);
 }
