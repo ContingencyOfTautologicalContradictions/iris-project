@@ -45,7 +45,7 @@ namespace Iris::LSP
                 ip.initializationOptions.Value() = initializationOptions.get<
                 std::string>();
         }
-        //ip.capabilities = data.at("capabilities").get<ClientCapabilities>();
+        ip.capabilities = data.at("capabilities").get<ClientCapabilities>();
         ip.trace = Json::Field<TraceValue>(data, "trace");
         if(data.contains("workspaceFolders"))
         {
@@ -125,7 +125,7 @@ namespace Iris::LSP
         if(ip.initializationOptions.Present())
             data["initializationOptions"] = jsonify(ip.initializationOptions.
             Value());
-        //data["capabilities"] = ip.capabilities;
+        data["capabilities"] = ip.capabilities;
         if(ip.trace.Present())
             data["trace"] = ip.trace.Value();
         if(ip.workspaceFolders.Present())

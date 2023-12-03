@@ -2,6 +2,7 @@
 #include "TraceValue.hpp"
 #include "ClientInfo.hpp"
 #include "WorkspaceFolder.hpp"
+#include "ClientCapabilities.hpp"
 #include "WorkDoneProgressParams.hpp"
 
 namespace Iris::LSP
@@ -24,7 +25,7 @@ namespace Iris::LSP
         Json::Field<std::optional<std::variant<bool, std::int64_t, std::string>
         >> initializationOptions;
 
-        //ClientCapabilities capabilities;
+        ClientCapabilities capabilities;
 
         Json::Field<TraceValue> trace;
 
