@@ -1,5 +1,5 @@
 #pragma once
-#include "../JSON/Field.hpp"
+#include "InitializeParams.hpp"
 
 namespace Iris::LSP
 {
@@ -12,7 +12,7 @@ namespace Iris::LSP
 
         std::string method;
 
-        Json::Field<std::vector<std::variant<bool>>> params;
+        Json::Field<std::vector<std::variant<InitializeParams>>> params;
     };
 
     void from_json(const nlohmann::json&, Request&);

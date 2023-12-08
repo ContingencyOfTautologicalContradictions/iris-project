@@ -7,7 +7,8 @@ namespace Iris::LSP
     noexcept -> void
     {
         std::variant<T...> variant;
-        
+        if(method == "initialize")
+            variant = param.get<InitializeParams>();
         params.Value().push_back(variant);
     }
 
