@@ -17,7 +17,10 @@ namespace Iris::LSP
             Header(request);
             const nlohmann::json data = nlohmann::json::parse(request);
             if(data.is_object())
-                std::cout << data.template get<Message>().Respond();
+            {
+                const Message message = data.get<Message>();
+                // TODO: send request
+            }
         }
     }
 }
