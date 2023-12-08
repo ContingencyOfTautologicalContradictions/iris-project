@@ -3,13 +3,13 @@
 
 namespace Iris::LSP
 {
-    class [[nodiscard]] TextDocumentFilter final
+    class [[nodiscard]] NotebookDocumentFilter final
     {
     public:
         Json::Field<std::string> notebookType, scheme, pattern;
     };
 
-    void from_json(const nlohmann::json&, TextDocumentFilter&);
+    void from_json(const nlohmann::json&, NotebookDocumentFilter&);
 
-    void to_json(nlohmann::json&, const TextDocumentFilter&);
+    void to_json(nlohmann::json&, const NotebookDocumentFilter&);
 }

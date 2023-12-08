@@ -2,14 +2,14 @@
 
 namespace Iris::LSP
 {
-    void from_json(const nlohmann::json& data, TextDocumentFilter& tdf)
+    void from_json(const nlohmann::json& data, NotebookDocumentFilter& tdf)
     {
         tdf.notebookType = Json::Field<std::string>(data, "notebookType");
         tdf.scheme = Json::Field<std::string>(data, "scheme");
         tdf.pattern = Json::Field<std::string>(data, "pattern");
     }
 
-    void to_json(nlohmann::json& data, const TextDocumentFilter& tdf)
+    void to_json(nlohmann::json& data, const NotebookDocumentFilter& tdf)
     {
         if(tdf.notebookType.Present())
             data["notebookType"] = tdf.notebookType.Value();
