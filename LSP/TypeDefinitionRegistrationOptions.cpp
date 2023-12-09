@@ -6,7 +6,7 @@ namespace Iris::LSP
     TypeDefinitionRegistrationOptions& tdro)
     {
         const nlohmann::json& documentSelector = data.at("documentSelector");
-        if(documentSelector.is_object())
+        if(not documentSelector.is_null())
             tdro.documentSelector = documentSelector.get<DocumentSelector>();
         tdro.workDoneProgress = Json::Field<bool>(data, "workDoneProgress");
         tdro.id = Json::Field<std::string>(data, "id");
