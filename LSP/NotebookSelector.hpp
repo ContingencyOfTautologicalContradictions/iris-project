@@ -12,4 +12,8 @@ namespace Iris::LSP
 
         Json::Field<std::vector<Cells>> cells;
     };
+
+    void from_json(const nlohmann::json&, NotebookSelector&);
+
+    void to_json(nlohmann::json&, const NotebookSelector&);
 }
