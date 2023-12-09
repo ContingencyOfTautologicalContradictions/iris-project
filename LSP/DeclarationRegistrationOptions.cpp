@@ -7,7 +7,7 @@ namespace Iris::LSP
     {
         dro.workDoneProgress = Json::Field<bool>(data, "workDoneProgress");
         const nlohmann::json& documentSelector = data.at("documentSelector");
-        if(documentSelector.is_object())
+        if(not documentSelector.is_null())
             dro.documentSelector = documentSelector.get<DocumentSelector>();
         dro.id = Json::Field<std::string>(data, "id");
     }
