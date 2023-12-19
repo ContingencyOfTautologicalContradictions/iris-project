@@ -2,7 +2,6 @@
 #include "Header.hpp"
 #include "Message.hpp"
 #include <iostream>
-#include <fstream>
 
 namespace Iris::LSP
 {
@@ -17,10 +16,7 @@ namespace Iris::LSP
             Header(request);
             const nlohmann::json data = nlohmann::json::parse(request);
             if(data.is_object())
-            {
-                const Message message = data.get<Message>();
-                // TODO: send request
-            }
+                std::cout << ContentLength(data.get<Message>().Respond());
         }
     }
 }
